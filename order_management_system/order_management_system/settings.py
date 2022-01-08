@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-from secrets import *
 from pathlib import Path
-
+from decouple import config
+from order_management_system.secrets import SECRET_KEY
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+SECRET_KEY = config('SECRET_KEY')
 ALLOWED_HOSTS = []
 
 
