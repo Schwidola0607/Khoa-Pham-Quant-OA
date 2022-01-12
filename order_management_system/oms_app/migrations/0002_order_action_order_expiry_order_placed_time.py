@@ -8,24 +8,32 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('oms_app', '0001_initial'),
+        ("oms_app", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='order',
-            name='action',
-            field=models.CharField(choices=[('buy', 'Buy'), ('sell', 'Sell'), ('pend', 'Pending')], default='pend', max_length=4),
+            model_name="order",
+            name="action",
+            field=models.CharField(
+                choices=[("buy", "Buy"), ("sell", "Sell"), ("pend", "Pending")],
+                default="pend",
+                max_length=4,
+            ),
         ),
         migrations.AddField(
-            model_name='order',
-            name='expiry',
-            field=models.DateTimeField(default=datetime.datetime(9999, 12, 31, 23, 59, 59, 999999)),
+            model_name="order",
+            name="expiry",
+            field=models.DateTimeField(
+                default=datetime.datetime(9999, 12, 31, 23, 59, 59, 999999)
+            ),
         ),
         migrations.AddField(
-            model_name='order',
-            name='placed_time',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now),
+            model_name="order",
+            name="placed_time",
+            field=models.DateTimeField(
+                auto_now_add=True, default=django.utils.timezone.now
+            ),
             preserve_default=False,
         ),
     ]

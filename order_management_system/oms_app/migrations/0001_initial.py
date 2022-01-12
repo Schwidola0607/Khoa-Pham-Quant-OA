@@ -7,17 +7,31 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Order',
+            name="Order",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('ticker', models.CharField(max_length=200)),
-                ('quantity', models.PositiveIntegerField()),
-                ('order_type', models.CharField(choices=[('mar', 'Market Order'), ('lim', 'Limit Order')], default='mar', max_length=3)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("ticker", models.CharField(max_length=200)),
+                ("quantity", models.PositiveIntegerField()),
+                (
+                    "order_type",
+                    models.CharField(
+                        choices=[("mar", "Market Order"), ("lim", "Limit Order")],
+                        default="mar",
+                        max_length=3,
+                    ),
+                ),
             ],
         ),
     ]
